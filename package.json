@@ -1,35 +1,38 @@
 {
   "name": "pauls-electron-rpc",
-  "version": "7.0.1",
-  "description": "My RPC solution for exporting APIs from the electron background process to renderers and webviews.",
+  "version": "7.0.2",
+  "description": "An RPC solution for exporting APIs from the Electron background process to renderers and webviews.",
   "main": "index.js",
   "scripts": {
-    "test": "node -e \"require('child_process').spawn(require('electron'), ['./test'], { stdio: 'inherit' })\" --no-force-async-hooks-checks"
+    "test": "node -e \"require('child_process').spawn(require('electron'), ['--no-sandbox'], ['./test'], { stdio: 'inherit' })\" --no-force-async-hooks-checks",
+    "clean": "rimraf node_modules"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pfraze/pauls-electron-rpc.git"
+    "url": "git+https://github.com/Alex313031/pauls-electron-rpc.git"
   },
   "keywords": [
     "electron",
     "rpc",
+    "webview",
     "ipc"
   ],
-  "author": "Paul Frazee <pfrazee@gmail.com>",
+  "author": "Alexander Frick <Alex313031@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pfraze/pauls-electron-rpc/issues"
+    "url": "https://github.com/Alex313031/pauls-electron-rpc/issues"
   },
-  "homepage": "https://github.com/pfraze/pauls-electron-rpc#readme",
+  "homepage": "https://github.com/Alex313031/pauls-electron-rpc#readme",
   "devDependencies": {
     "arraybuffer-equal": "^1.0.4",
-    "electron": "9.0.0-beta.24",
-    "multicb": "^1.2.1",
-    "tape": "^4.6.0",
-    "tape-dom": "0.0.10",
+    "electron": "12.2.3",
+    "multicb": "^1.2.2",
+    "rimraf": "^3.0.2",
+    "tape": "^4.16.2",
+    "tape-dom": "0.0.12",
     "zerr": "^1.0.4"
   },
   "dependencies": {
-    "duplexer": "^0.1.1"
+    "duplexer": "^0.1.2"
   }
 }
